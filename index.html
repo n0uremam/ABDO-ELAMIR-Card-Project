@@ -1,88 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ABDO ELAMIR</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Cairo:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-<header>
-  <img src="images/logo.png" class="logo" alt="Abdo Elamir">
+<!-- ===== Header ===== -->
+<header class="top-bar">
+  <img src="images/logo.png" class="logo" alt="Abdo Elamir" />
+  <div class="lang">
+    <button id="enBtn" class="active">EN</button>
+    <button id="arBtn">AR</button>
+  </div>
 </header>
 
-<!-- ===== Banner ===== -->
-<section class="hero">
-  <h1>ABDO ELAMIR</h1>
-  <p>Luxury car protection & detailing</p>
-</section>
-
-<!-- ===== Map ===== -->
-<section class="map-section" id="map">
-  <iframe
-    id="mapFrame"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://maps.google.com/maps?q=6th%20of%20October%20City&t=&z=14&ie=UTF8&iwloc=&output=embed">
-  </iframe>
+<!-- ===== Cover ===== -->
+<section class="cover">
+  <div class="cover-overlay">
+    <h1 data-en="ABDO ELAMIR" data-ar="عبده الأمير">ABDO ELAMIR</h1>
+    <p data-en="Luxury car protection & detailing"
+       data-ar="حماية وتفصيل السيارات الفاخرة">
+       Luxury car protection & detailing
+    </p>
+  </div>
 </section>
 
 <!-- ===== Branches ===== -->
 <section class="branches">
 
   <div class="branch"
-       data-map="https://maps.google.com/maps?q=6th%20of%20October%20City&t=&z=14&output=embed"
-       data-phone="+201027596468">
-    <img src="images/6th of October City.png" alt="6th of October">
-    <h3>6th of October<br><span>٦ أكتوبر</span></h3>
-    <a class="call" href="tel:+201027596468">Call Branch</a>
+       data-map="https://maps.app.goo.gl/mso2BCnqRNYPLMhU6">
+    <img src="images/6th of October City.png" alt="">
+    <h3 data-en="6th of October" data-ar="٦ أكتوبر">6th of October</h3>
+    <a href="tel:+201027596468">Call Branch</a>
   </div>
 
   <div class="branch"
-       data-map="https://maps.google.com/maps?q=El%20Sheikh%20Zayed%20City&t=&z=14&output=embed"
-       data-phone="+201096418934">
-    <img src="images/El Sheikh Zayed City.png" alt="Sheikh Zayed">
-    <h3>Sheikh Zayed<br><span>الشيخ زايد</span></h3>
-    <a class="call" href="tel:+201096418934">Call Branch</a>
+       data-map="https://maps.app.goo.gl/aDiZxX6Nte39SyQb8">
+    <img src="images/El Sheikh Zayed City.png" alt="">
+    <h3 data-en="Sheikh Zayed" data-ar="الشيخ زايد">Sheikh Zayed</h3>
+    <a href="tel:+201096418934">Call Branch</a>
   </div>
 
   <div class="branch"
-       data-map="https://maps.google.com/maps?q=Tanta&t=&z=14&output=embed">
-    <img src="images/TANTA.png" alt="Tanta">
-    <h3>Tanta<br><span>طنطا</span></h3>
-    <a class="call" href="tel:">Call Branch</a>
+       data-map="https://maps.app.goo.gl/f5ydEwAGqJDbdBsG8">
+    <img src="images/TANTA.png" alt="">
+    <h3 data-en="Tanta" data-ar="طنطا">Tanta</h3>
+    <a href="#">Call Branch</a>
   </div>
 
   <div class="branch"
-       data-map="https://maps.google.com/maps?q=The%205th%20Settlement&t=&z=14&output=embed">
-    <img src="images/The 5th Settlement.png" alt="5th Settlement">
-    <h3>5th Settlement<br><span>التجمع الخامس</span></h3>
-    <a class="call" href="tel:+201013956863">Call Branch</a>
-  </div>
-
-  <div class="branch"
-       data-map="https://maps.google.com/maps?q=Maadi&t=&z=14&output=embed">
-    <img src="images/MAADI.png" alt="Maadi">
-    <h3>Maadi<br><span>المعادي</span></h3>
-    <a class="call" href="tel:+201066881021">Call Branch</a>
-  </div>
-
-  <div class="branch"
-       data-map="https://maps.google.com/maps?q=Nasr%20City&t=&z=14&output=embed">
-    <img src="images/NASR CITY.png" alt="Nasr City">
-    <h3>Nasr City<br><span>مدينة نصر</span></h3>
-    <a class="call" href="tel:+201020829175">Call Branch</a>
-  </div>
-
-  <div class="branch"
-       data-map="https://maps.google.com/maps?q=Dubai&t=&z=12&output=embed">
-    <img src="images/Dubai.png" alt="Dubai">
-    <h3>Dubai<br><span>دبي</span></h3>
-    <a class="call" href="tel:">Call Branch</a>
+       data-map="https://maps.app.goo.gl/J4vXDn68uBtvnWb19">
+    <img src="images/Dubai.png" alt="">
+    <h3 data-en="Dubai" data-ar="دبي">Dubai</h3>
+    <a href="#">Call Branch</a>
   </div>
 
 </section>
