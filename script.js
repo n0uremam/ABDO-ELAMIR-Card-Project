@@ -9,8 +9,8 @@ function setLang(lang){
 
   document.querySelectorAll("[data-en]").forEach(el=>{
     el.childNodes[0].nodeValue = el.dataset[lang];
-    const arSpan = el.querySelector(".ar");
-    if(arSpan) arSpan.style.display = lang === "ar" ? "block" : "none";
+    const ar = el.querySelector(".ar");
+    if(ar) ar.style.display = lang === "ar" ? "block" : "none";
   });
 
   enBtn.classList.toggle("active", lang==="en");
