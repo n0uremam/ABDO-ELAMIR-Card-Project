@@ -2,69 +2,86 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
+  <title>Abdo El Amir — Dubai Branch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ABDO ELAMIR</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Cairo:wght@500;600&display=swap" rel="stylesheet">
+  <!-- Roboto Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- ===== Header ===== -->
-<header class="top-bar">
-  <img src="images/logo.png" class="logo" alt="Abdo Elamir" />
-  <div class="lang">
-    <button id="enBtn" class="active">EN</button>
-    <button id="arBtn">AR</button>
+<header class="banner">
+  <div class="banner-overlay"></div>
+
+  <div class="banner-content fade-in">
+    <img src="logo.png" alt="Abdo El Amir" class="logo">
+
+    <h1 data-en="Abdo El Amir" data-ar="عبده الأمير">
+      Abdo El Amir
+    </h1>
+
+    <p class="subtitle" data-en="Dubai Branch" data-ar="فرع دبي">
+      Dubai Branch
+    </p>
+
+    <div class="lang-toggle">
+      <button id="langToggle">AR</button>
+    </div>
   </div>
 </header>
 
-<!-- ===== Cover ===== -->
-<section class="cover">
-  <div class="cover-overlay">
-    <h1 data-en="ABDO ELAMIR" data-ar="عبده الأمير">ABDO ELAMIR</h1>
-    <p data-en="Luxury car protection & detailing"
-       data-ar="حماية وتفصيل السيارات الفاخرة">
-       Luxury car protection & detailing
-    </p>
-  </div>
-</section>
-
-<!-- ===== Branches ===== -->
 <section class="branches">
 
-  <div class="branch"
-       data-map="https://maps.app.goo.gl/mso2BCnqRNYPLMhU6">
-    <img src="images/6th of October City.png" alt="">
-    <h3 data-en="6th of October" data-ar="٦ أكتوبر">6th of October</h3>
-    <a href="tel:+201027596468">Call Branch</a>
-  </div>
+  <h2 class="section-title fade-in"
+      data-en="Our Branch"
+      data-ar="فروعنا">
+    Our Branch
+  </h2>
 
-  <div class="branch"
-       data-map="https://maps.app.goo.gl/aDiZxX6Nte39SyQb8">
-    <img src="images/El Sheikh Zayed City.png" alt="">
-    <h3 data-en="Sheikh Zayed" data-ar="الشيخ زايد">Sheikh Zayed</h3>
-    <a href="tel:+201096418934">Call Branch</a>
-  </div>
+  <!-- Branch Card -->
+  <div class="branch-card reveal">
 
-  <div class="branch"
-       data-map="https://maps.app.goo.gl/f5ydEwAGqJDbdBsG8">
-    <img src="images/TANTA.png" alt="">
-    <h3 data-en="Tanta" data-ar="طنطا">Tanta</h3>
-    <a href="#">Call Branch</a>
-  </div>
+    <div class="branch-info">
+      <h3 data-en="Dubai — Premium Car Films"
+          data-ar="دبي — أفلام سيارات فاخرة">
+        Dubai — Premium Car Films
+      </h3>
 
-  <div class="branch"
-       data-map="https://maps.app.goo.gl/J4vXDn68uBtvnWb19">
-    <img src="images/Dubai.png" alt="">
-    <h3 data-en="Dubai" data-ar="دبي">Dubai</h3>
-    <a href="#">Call Branch</a>
+      <p data-en="Luxury car protection & styling services."
+         data-ar="خدمات حماية وتجميل السيارات الفاخرة.">
+        Luxury car protection & styling services.
+      </p>
+    </div>
+
+    <div class="branch-actions">
+      <a href="https://wa.me/971000000000"
+         class="btn whatsapp"
+         target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        WhatsApp
+      </a>
+
+      <a href="https://maps.app.goo.gl/J4vXDn68uBtvnWb19"
+         class="btn map"
+         target="_blank">
+        <i class="fas fa-map-marker-alt"></i>
+        Map
+      </a>
+    </div>
+
   </div>
 
 </section>
+
+<footer class="footer">
+  © 2026 Abdo El Amir — Dubai
+</footer>
 
 <script src="script.js"></script>
 </body>
