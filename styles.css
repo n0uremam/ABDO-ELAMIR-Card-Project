@@ -1,14 +1,14 @@
+/* GLOBAL */
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+
 :root{
   --bg:#0b0b0d;
   --card:#121215;
   --gold:#c9a24d;
   --gold-soft:#e6c87a;
-  --text:#ffffff;
-  --muted:#b5b5b5;
+  --text:#fff;
 }
-
-*{box-sizing:border-box}
-a{color:inherit;text-decoration:none}
 
 body{
   margin:0;
@@ -20,40 +20,18 @@ body{
   padding:32px 16px;
 }
 
-.page{width:100%;max-width:900px}
+.page{width:100%;max-width:1100px}
 
+/* CARD */
 .card{
   background:var(--card);
   border-radius:18px;
   overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,.65);
+  box-shadow:0 30px 80px rgba(0,0,0,.7);
 }
 
-/* Language switch */
-.lang-switch{
-  position:fixed;
-  top:20px;
-  right:20px;
-  z-index:99;
-}
-.lang-switch button{
-  background:#000;
-  color:var(--gold);
-  border:1px solid var(--gold);
-  padding:6px 12px;
-  margin-left:6px;
-  cursor:pointer;
-}
-.lang-switch button.active{
-  background:var(--gold);
-  color:#000;
-}
-
-/* Banner */
-.banner{
-  position:relative;
-  height:280px;
-}
+/* BANNER */
+.banner{position:relative;height:280px}
 .banner-img{
   width:100%;
   height:100%;
@@ -73,52 +51,40 @@ body{
   transform:translateX(-50%);
   width:120px;
   height:120px;
-  border-radius:50%;
   background:#000;
+  border-radius:50%;
   padding:10px;
-  z-index:2;
 }
 
-/* Content */
-.card-body{
-  padding:90px 30px 40px;
-}
-
-.name{
-  text-align:center;
-  font-size:34px;
-}
+/* CONTENT */
+.card-body{padding:90px 32px 44px}
+.name{text-align:center;font-size:clamp(26px,4vw,36px)}
 .name .ar{
   display:block;
   font-family:"Cairo",sans-serif;
   font-size:20px;
   color:var(--gold-soft);
 }
-
 .desc{
-  text-align:center;
-  max-width:600px;
+  max-width:680px;
   margin:12px auto 28px;
+  text-align:center;
   font-size:15px;
   line-height:1.7;
-  color:#ddd;
-  font-family:"Segoe UI",sans-serif;
 }
 
-/* Social */
+/* SOCIAL */
 .social{
   display:flex;
   justify-content:center;
-  gap:26px;
+  gap:24px;
   margin-bottom:36px;
 }
 .social a{
   width:46px;height:46px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   border-radius:50%;
-  background:rgba(255,255,255,.04);
+  background:rgba(255,255,255,.05);
   color:var(--gold);
   transition:.25s;
 }
@@ -128,13 +94,14 @@ body{
   transform:translateY(-4px);
 }
 
-/* Locations */
+/* RESPONSIVE GRID (IMPORTANT FIX) */
 .location-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
 }
 
+/* LOCATION CARD */
 .loc-card{
   background:#0f0f12;
   border-radius:14px;
@@ -148,17 +115,16 @@ body{
   width:100%;
   height:160px;
   object-fit:cover;
-  filter:brightness(.55);
+  filter:brightness(.6);
 }
 
+/* TITLE + GOLD UNDERLINE */
 .loc-title{
   padding:16px;
   text-align:center;
   font-size:18px;
   position:relative;
 }
-
-/* GOLD UNDERLINE ANIMATION */
 .loc-title::after{
   content:"";
   position:absolute;
@@ -167,30 +133,34 @@ body{
   width:0;
   height:2px;
   background:var(--gold);
-  transition:.3s;
   transform:translateX(-50%);
+  transition:.3s;
 }
-.loc-card:hover .loc-title::after{
-  width:40%;
-}
+.loc-card:hover .loc-title::after{width:40%}
 
 .loc-title .ar{
   display:block;
+  margin-top:6px;
   font-family:"Cairo",sans-serif;
   font-size:15px;
   color:var(--gold-soft);
-  margin-top:6px;
 }
 
+/* CALL */
 .call-btn{
   display:block;
-  text-align:center;
   padding:12px;
+  text-align:center;
   background:#000;
   color:var(--gold);
-  border-top:1px solid rgba(255,255,255,.05);
+  border-top:1px solid rgba(255,255,255,.06);
 }
 .call-btn:hover{
   background:var(--gold);
   color:#000;
+}
+
+/* DUBAI HIGHLIGHT */
+.loc-card.dubai{
+  border:1px solid rgba(201,162,77,.35);
 }
