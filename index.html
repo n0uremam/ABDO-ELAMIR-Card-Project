@@ -1,169 +1,165 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABDO ELAMIR</title>
 
-  <title>ABDO ELAMIR</title>
+<style>
+:root {
+  --gold: #c9a24d;
+  --bg: #0b0b0d;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
 
-  <style>
-    :root {
-      --gold: #c9a24d;
-      --dark: #0b0b0d;
-      --glass: rgba(0,0,0,0.45);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Playfair Display", serif;
-    }
+body {
+  background: var(--bg);
+  color: white;
+  font-family: "Playfair Display", serif;
+  overflow-x: hidden;
+}
 
-    body {
-      background: var(--dark);
-      color: #fff;
-      overflow-x: hidden;
-    }
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  padding: 0 24px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    /* ===== FLOATING HEADER ===== */
-    header {
-      position: fixed;
-      top: 20px;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 24px;
-    }
+.logo {
+  letter-spacing: 2px;
+  font-size: 18px;
+}
 
-    .logo {
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: white;
-    }
+.lang {
+  display: flex;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  padding: 4px;
+}
 
-    .lang-switch {
-      display: flex;
-      gap: 6px;
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      border-radius: 30px;
-      padding: 4px;
-    }
+.lang button {
+  width: 42px;
+  height: 28px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .35s var(--ease);
+}
 
-    .lang-switch button {
-      width: 42px;
-      height: 28px;
-      border-radius: 20px;
-      border: none;
-      background: transparent;
-      color: #aaa;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.lang button.active {
+  background: var(--gold);
+  color: black;
+}
 
-    .lang-switch button.active,
-    .lang-switch button:hover {
-      background: var(--gold);
-      color: black;
-    }
+/* ================= HERO ================= */
+.hero {
+  min-height: 85vh;
+  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.65), var(--bg)),
+    url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2") center/cover;
+}
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 85vh;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,.6), #0b0b0d),
-        url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2") center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 120px;
-      text-align: center;
-    }
+.hero h1 {
+  font-size: clamp(32px, 6vw, 56px);
+  letter-spacing: 3px;
+}
 
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 52px);
-      letter-spacing: 3px;
-    }
+.hero h2 {
+  color: var(--gold);
+  margin-top: 6px;
+  font-size: clamp(18px, 3vw, 22px);
+}
 
-    .hero h2 {
-      color: var(--gold);
-      margin-top: 8px;
-      font-size: clamp(16px, 3vw, 22px);
-    }
+.hero p {
+  margin-top: 18px;
+  max-width: 520px;
+  opacity: .85;
+  font-size: 14px;
+}
 
-    .hero p {
-      max-width: 520px;
-      margin: 18px auto;
-      font-size: 14px;
-      opacity: 0.85;
-    }
+/* ================= SECTIONS ================= */
+section {
+  padding: 70px 24px;
+}
 
-    /* ===== BRANCHES ===== */
-    .branches {
-      padding: 60px 24px;
-    }
+.branches {
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .branch-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
+.branch-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
 
-    .branch {
-      background: #111;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
+.branch {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: 1s var(--ease);
+}
 
-    .branch:hover {
-      transform: translateY(-6px);
-    }
+.branch.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
 
-    .branch img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
+.branch img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
 
-    .branch h3 {
-      padding: 14px;
-      text-align: center;
-      font-size: 16px;
-    }
+.branch h3 {
+  padding: 14px;
+  text-align: center;
+}
 
-    /* ===== MOBILE FIX ===== */
-    @media (max-width: 768px) {
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+  }
 
-      .hero {
-        min-height: 70vh;
-        padding-top: 100px;
-      }
+  section {
+    padding: 45px 16px;
+  }
 
-      .branches {
-        padding: 40px 16px;
-      }
+  .branch-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+  }
 
-      .branch-list {
-        display: flex;
-        overflow-x: auto;
-        gap: 14px;
-      }
-
-      .branch {
-        min-width: 260px;
-      }
-
-      body {
-        font-size: 14px;
-      }
-    }
-  </style>
+  .branch {
+    min-width: 260px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -171,43 +167,72 @@
 <header>
   <div class="logo">ABDO ELAMIR</div>
 
-  <div class="lang-switch">
-    <button class="active">EN</button>
-    <button>AR</button>
+  <div class="lang">
+    <button id="en" class="active">EN</button>
+    <button id="ar">AR</button>
   </div>
 </header>
 
-<section class="hero">
-  <div>
-    <h1>ABDO ELAMIR</h1>
-    <h2>عبده الأمير</h2>
-    <p>Luxury car protection & detailing. Trusted across Egypt and Dubai.</p>
+<!-- ================= HERO ================= -->
+<section class="hero animate">
+  <div id="heroText">
+    <h1 data-en="ABDO ELAMIR" data-ar="عبده الأمير">ABDO ELAMIR</h1>
+    <h2 data-en="Luxury Car Protection"
+        data-ar="حماية السيارات الفاخرة">Luxury Car Protection</h2>
+    <p data-en="Trusted across Egypt and Dubai."
+       data-ar="ثقة تمتد عبر مصر ودبي.">
+       Trusted across Egypt and Dubai.
+    </p>
   </div>
 </section>
 
+<!-- ================= BRANCHES ================= -->
 <section class="branches">
   <div class="branch-list">
-    <div class="branch">
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=6th+of+October" />
-      <h3>6th of October</h3>
-    </div>
-
-    <div class="branch">
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=Sheikh+Zayed" />
-      <h3>Sheikh Zayed</h3>
-    </div>
-
-    <div class="branch">
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=Tanta" />
-      <h3>Tanta</h3>
-    </div>
-
-    <div class="branch">
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=5th+Settlement" />
-      <h3>5th Settlement</h3>
-    </div>
+    <div class="branch animate"><img src="https://picsum.photos/400/200?1"><h3 data-en="6th of October" data-ar="السادس من أكتوبر">6th of October</h3></div>
+    <div class="branch animate"><img src="https://picsum.photos/400/200?2"><h3 data-en="Sheikh Zayed" data-ar="الشيخ زايد">Sheikh Zayed</h3></div>
+    <div class="branch animate"><img src="https://picsum.photos/400/200?3"><h3 data-en="Tanta" data-ar="طنطا">Tanta</h3></div>
+    <div class="branch animate"><img src="https://picsum.photos/400/200?4"><h3 data-en="5th Settlement" data-ar="التجمع الخامس">5th Settlement</h3></div>
   </div>
 </section>
+
+<script>
+/* ================= LANGUAGE SWITCH ================= */
+const buttons = document.querySelectorAll(".lang button");
+const texts = document.querySelectorAll("[data-en]");
+
+buttons.forEach(btn => {
+  btn.onclick = () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const lang = btn.id;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+    texts.forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = "translateY(6px)";
+      setTimeout(() => {
+        el.textContent = el.dataset[lang];
+        el.style.opacity = 1;
+        el.style.transform = "translateY(0)";
+      }, 200);
+    });
+  };
+});
+
+/* ================= APPLE-LEVEL SCROLL ================= */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add("visible");
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.25 });
+
+document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
