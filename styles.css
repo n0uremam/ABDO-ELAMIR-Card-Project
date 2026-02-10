@@ -4,7 +4,6 @@
   --bg-soft:#0b0b0b;
   --text:#fff;
   --muted:#a8a8a8;
-  --card:#0d0d0d;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Roboto",sans-serif}
@@ -29,7 +28,7 @@ body{background:var(--bg-dark);color:var(--text);overflow-x:hidden}
 .logo{width:110px;margin-bottom:22px}
 .banner h1{
   font-size:clamp(2.4rem,5vw,4rem);
-  font-weight:800;
+  font-weight:900;
   letter-spacing:2px;
 }
 .banner h1::after{
@@ -39,15 +38,40 @@ body{background:var(--bg-dark);color:var(--text);overflow-x:hidden}
 }
 .subtitle{color:var(--muted);margin-top:10px;letter-spacing:1px}
 
+/* Social Media (Hero) */
+.socials{
+  margin-top:26px;
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.socials a{
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  color:var(--gold);
+  font-size:18px;
+  transition:transform .25s ease, background .25s ease, box-shadow .25s ease, color .25s ease;
+}
+.socials a:hover{
+  background:var(--gold);
+  color:#000;
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(201,162,77,.35);
+}
+
 /* Language toggle */
-.lang-toggle{margin-top:26px}
+.lang-toggle{margin-top:22px}
 .lang-toggle button{
   background:transparent;
   border:1px solid var(--gold);
   color:var(--gold);
   padding:8px 18px;
   cursor:pointer;
-  font-weight:700;
+  font-weight:800;
   border-radius:999px;
   transition:.25s ease;
 }
@@ -59,6 +83,7 @@ body{background:var(--bg-dark);color:var(--text);overflow-x:hidden}
   text-align:center;
   font-size:2rem;
   margin-bottom:46px;
+  font-weight:900;
 }
 .section-title::after{
   content:"";display:block;width:70px;height:2px;
@@ -102,7 +127,7 @@ body{background:var(--bg-dark);color:var(--text);overflow-x:hidden}
 .branch-body{padding:18px 18px 20px}
 .branch-body h3{
   font-size:1.25rem;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:.3px;
   position:relative;
   padding-bottom:10px;
@@ -136,7 +161,7 @@ body{background:var(--bg-dark);color:var(--text);overflow-x:hidden}
   background:#111;
   border:1px solid rgba(255,255,255,.07);
   color:#eee;
-  font-weight:700;
+  font-weight:800;
   font-size:.92rem;
   transition:.25s ease;
 }
@@ -170,6 +195,26 @@ body{background:var(--bg-dark);color:var(--text);overflow-x:hidden}
   padding:26px;
   color:var(--muted);
   background:#000;
+}
+.footer-socials{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-bottom:10px;
+  flex-wrap:wrap;
+}
+.footer-socials a{
+  width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,0.05);
+  color:var(--gold);
+  transition:.25s ease;
+}
+.footer-socials a:hover{
+  background:var(--gold);
+  color:#000;
+  transform:translateY(-2px);
 }
 
 /* Mobile: make it not too long */
