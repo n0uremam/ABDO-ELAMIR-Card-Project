@@ -1,92 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Abdo Elamir — Digital Card</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Abdo El Amir — Dubai</title>
+
+  <!-- Luxury Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cairo:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
-  <div class="page">
-    <div class="card">
-      <!-- Header / banner -->
-      <div class="banner">
-        <img src="images/banner.png" alt="banner" class="banner-img"/>
-        <img src="images/logo.png" alt="logo" class="logo"/>
+<div class="lang-switch">
+  <button id="enBtn" class="active">EN</button>
+  <button id="arBtn">AR</button>
+</div>
+
+<div class="page">
+  <div class="card">
+
+    <!-- Banner -->
+    <div class="banner">
+      <img src="images/banner.png" class="banner-img" alt="banner">
+      <img src="images/logo.png" class="logo" alt="logo">
+    </div>
+
+    <div class="card-body">
+
+      <h1 class="name" data-en="ABDO EL AMIR" data-ar="عبده الأمير">
+        ABDO EL AMIR
+        <span class="ar">عبده الأمير</span>
+      </h1>
+
+      <p class="desc" 
+         data-en="Luxury car protection & detailing. Dubai flagship branch."
+         data-ar="الحماية والتجهيز الفاخر للسيارات. فرع دبي الرئيسي.">
+        Luxury car protection & detailing. Dubai flagship branch.
+      </p>
+
+      <!-- Social -->
+      <div class="social">
+        <a href="https://www.instagram.com/abdoelamirofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/abdoelamercars/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/201222665568" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
-      <div class="card-body">
-        <h1 class="name">ABDO ELAMIR <span class="ar">عبده الامير</span></h1>
-        <p class="locations">6th of October — El Sheikh Zayed — Tanta — The 5th Settlement — Maadi — Nasr City — Dubai</p>
-        <p class="desc">
-          Trusted for over 50 years in Egypt. We specialize in car protective films. Branches across Egypt and expansions to UAE & KSA.
-        </p>
-        <!-- Social icons -->
-        <div class="social">
-          <a href="https://www.facebook.com/abdoelamercars/" aria-label="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/abdoelamirofficial/" aria-label="instagram" target="_blank?hl=en" rel="noopener"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/201222665568" aria-label="whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" aria-label="tiktok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
-          <a href="https://abdoelamir.com/ar/" aria-label="website" target="_blank" rel="noopener"><i class="fas fa-globe"></i></a>
+
+      <!-- Locations -->
+      <div class="location-grid">
+
+        <div class="loc-card">
+          <a href="https://maps.app.goo.gl/mso2BCnqRNYPLMhU6" target="_blank">
+            <img src="images/6th.png" class="loc-img">
+            <div class="loc-title" data-en="6th of October" data-ar="٦ أكتوبر">
+              6th of October
+              <span class="ar">٦ أكتوبر</span>
+            </div>
+          </a>
+          <a class="call-btn" href="tel:+201027596468">Call Branch</a>
         </div>
-        <!-- Locations grid: 3 + 3 + 1 -->
-        <div class="location-grid">
-          <!-- Row 1 -->
-          <div class="loc-card">
-            <a class="loc-link" href="https://maps.app.goo.gl/mso2BCnqRNYPLMhU6" target="_blank" rel="noopener">
-              <img src="images/6th of October City.png" alt="6th of October" class="loc-img"/>
-              <div class="loc-title">6th of October<br><span class="ar">٦ أكتوبر</span></div>
-            </a>
-            <a class="call-btn" href="tel:+201027596468">Call Branch</a>
-          </div>
-          <div class="loc-card">
-            <a class="loc-link" href="https://maps.app.goo.gl/aDiZxX6Nte39SyQb8" target="_blank" rel="noopener">
-              <img src="images/El Sheikh Zayed City.png" alt="Sheikh Zayed" class="loc-img"/>
-              <div class="loc-title">Sheikh Zayed<br><span class="ar">الشيخ زايد</span></div>
-            </a>
-            <a class="call-btn" href="tel:+201096418934">Call Branch</a>
-          </div>
-          <div class="loc-card">
-            <a class="loc-link" href="https://maps.app.goo.gl/f5ydEwAGqJDbdBsG8" target="_blank" rel="noopener">
-              <img src="images/tanta.png" alt="Tanta" class="loc-img"/>
-              <div class="loc-title">Tanta<br><span class="ar">طنطا</span></div>
-            </a>
-            <a class="call-btn" href="tel:#">Call Branch</a>
-          </div>
-          <!-- Row 2 -->
-          <div class="loc-card">
-            <a class="loc-link" href="https://maps.app.goo.gl/ukuJkYmuQbeNfH4H7" target="_blank" rel="noopener">
-              <img src="images/The 5th Settlement.png" alt="5th Settlement" class="loc-img"/>
-              <div class="loc-title">5th Settlement<br><span class="ar">التجمع الخامس</span></div>
-            </a>
-            <a class="call-btn" href="tel:+201013956863">Call Branch</a>
-          </div>
-          <div class="loc-card">
-            <a class="loc-link" href="https://maps.app.goo.gl/szmagQ9WdrUYetkM7" target="_blank" rel="noopener">
-              <img src="images/maadi.png" alt="Maadi" class="loc-img"/>
-              <div class="loc-title">Maadi<br><span class="ar">المعادي</span></div>
-            </a>
-            <a class="call-btn" href="tel:+201066881021">Call Branch</a>
-          </div>
-          <div class="loc-card">
-            <a class="loc-link" href="https://maps.app.goo.gl/g3zhYzNELks3YXa29" target="_blank" rel="noopener">
-              <img src="images/NASR CITY.png" alt="Nasr City" class="loc-img"/>
-              <div class="loc-title">Nasr City<br><span class="ar">مدينة نصر</span></div>
-            </a>
-            <a class="call-btn" href="tel:+201020829175">Call Branch</a>
-          </div>
-          <!-- Row 3: single centered card -->
-          <div class="loc-card single">
-            <a class="loc-link" href="https://maps.google.com/?q=Dubai" target="_blank" rel="noopener">
-              <img src="images/dubai.png" alt="Dubai" class="loc-img"/>
-              <div class="loc-title">Dubai<br><span class="ar">دبي</span></div>
-            </a>
-            <a class="call-btn" href="tel:#">Call Branch</a>
-          </div>
+
+        <div class="loc-card">
+          <a href="https://maps.app.goo.gl/J4vXDn68uBtvnWb19" target="_blank">
+            <img src="images/dubai.png" class="loc-img">
+            <div class="loc-title" data-en="Dubai" data-ar="دبي">
+              Dubai
+              <span class="ar">دبي</span>
+            </div>
+          </a>
+          <a class="call-btn" href="#">Call Branch</a>
         </div>
-      </div> <!-- .card-body -->
-    </div> <!-- .card -->
-  </div> <!-- .page -->
-  <script src="script.js"></script>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
