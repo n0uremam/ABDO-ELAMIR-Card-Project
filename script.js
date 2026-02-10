@@ -1,28 +1,23 @@
-document.getElementById("shareBtn").addEventListener("click", async () => {
+document.getElementById("shareBtn")?.addEventListener("click", async () => {
   const data = {
-    title: "Abdo Elamir",
-    text: "Check this digital business card",
+    title: "Abdo Elamir – Dubai",
+    text: "Luxury car protection – Dubai Branch",
     url: window.location.href
   };
-  if (navigator.share) {
-    navigator.share(data);
-  } else {
-    alert("Sharing not supported on this device.");
-  }
+  if (navigator.share) navigator.share(data);
 });
-document.getElementById("saveBtn").addEventListener("click", () => {
-  const vcfData =
+
+document.getElementById("saveBtn")?.addEventListener("click", () => {
+  const vcf =
 `BEGIN:VCARD
 VERSION:3.0
-FN:ABDO ELAMIR
-TEL:01222447327
-EMAIL:info@abdeoelamir.com
+FN:ABDO ELAMIR DUBAI
+ORG:Abdo Elamir
+TEL:+971XXXXXXXXX
 END:VCARD`;
-  const blob = new Blob([vcfData], { type: "text/vcard" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "contact.vcf";
+  const blob = new Blob([vcf],{type:"text/vcard"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="AbdoElamirDubai.vcf";
   a.click();
-  URL.revokeObjectURL(url);
 });
