@@ -1,23 +1,18 @@
-document.getElementById("shareBtn")?.addEventListener("click", async () => {
-  const data = {
-    title: "Abdo Elamir – Dubai",
-    text: "Luxury car protection – Dubai Branch",
-    url: window.location.href
-  };
-  if (navigator.share) navigator.share(data);
-});
+const enBtn = document.getElementById("enBtn");
+const arBtn = document.getElementById("arBtn");
 
-document.getElementById("saveBtn")?.addEventListener("click", () => {
-  const vcf =
-`BEGIN:VCARD
-VERSION:3.0
-FN:ABDO ELAMIR DUBAI
-ORG:Abdo Elamir
-TEL:+971XXXXXXXXX
-END:VCARD`;
-  const blob = new Blob([vcf],{type:"text/vcard"});
-  const a=document.createElement("a");
-  a.href=URL.createObjectURL(blob);
-  a.download="AbdoElamirDubai.vcf";
-  a.click();
-});
+enBtn.onclick = () => setLang("en");
+arBtn.onclick = () => setLang("ar");
+
+function setLang(lang){
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.childNodes[0].nodeValue = el.dataset[lang];
+    const arSpan = el.querySelector(".ar");
+    if(arSpan) arSpan.style.display = lang === "ar" ? "block" : "none";
+  });
+
+  enBtn.classList.toggle("active", lang==="en");
+  arBtn.classList.toggle("active", lang==="ar");
+}
