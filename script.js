@@ -1,18 +1,14 @@
-const enBtn = document.getElementById("enBtn");
-const arBtn = document.getElementById("arBtn");
+const branches = document.querySelectorAll(".branch");
+const mapFrame = document.getElementById("mapFrame");
 
-enBtn.onclick = () => setLang("en");
-arBtn.onclick = () => setLang("ar");
+branches.forEach(branch => {
+  branch.addEventListener("click", () => {
+    const mapUrl = branch.dataset.map;
+    mapFrame.src = mapUrl;
 
-function setLang(lang){
-  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-
-  document.querySelectorAll("[data-en]").forEach(el=>{
-    el.childNodes[0].nodeValue = el.dataset[lang];
-    const ar = el.querySelector(".ar");
-    if(ar) ar.style.display = lang === "ar" ? "block" : "none";
+    document.getElementById("map").scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
   });
-
-  enBtn.classList.toggle("active", lang==="en");
-  arBtn.classList.toggle("active", lang==="ar");
-}
+});
