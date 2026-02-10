@@ -1,166 +1,101 @@
-/* GLOBAL */
-*{box-sizing:border-box}
-a{color:inherit;text-decoration:none}
-
-:root{
-  --bg:#0b0b0d;
-  --card:#121215;
-  --gold:#c9a24d;
-  --gold-soft:#e6c87a;
-  --text:#fff;
+:root {
+  --gold: #c9a24d;
+  --bg: #0b0b0d;
 }
 
-body{
-  margin:0;
-  background:radial-gradient(circle at top,#151518,#050506);
-  font-family:"Playfair Display",serif;
-  color:var(--text);
-  display:flex;
-  justify-content:center;
-  padding:32px 16px;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.page{width:100%;max-width:1100px}
-
-/* CARD */
-.card{
-  background:var(--card);
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,.7);
+body {
+  background: var(--bg);
+  color: white;
+  font-family: "Playfair Display", serif;
 }
 
-/* BANNER */
-.banner{position:relative;height:280px}
-.banner-img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.45);
-}
-.banner::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.4),#0b0b0d);
-}
-.logo{
-  position:absolute;
-  bottom:-55px;
-  left:50%;
-  transform:translateX(-50%);
-  width:120px;
-  height:120px;
-  background:#000;
-  border-radius:50%;
-  padding:10px;
+/* Header */
+header {
+  padding: 20px;
+  text-align: center;
 }
 
-/* CONTENT */
-.card-body{padding:90px 32px 44px}
-.name{text-align:center;font-size:clamp(26px,4vw,36px)}
-.name .ar{
-  display:block;
-  font-family:"Cairo",sans-serif;
-  font-size:20px;
-  color:var(--gold-soft);
-}
-.desc{
-  max-width:680px;
-  margin:12px auto 28px;
-  text-align:center;
-  font-size:15px;
-  line-height:1.7;
+.logo {
+  width: 120px;
 }
 
-/* SOCIAL */
-.social{
-  display:flex;
-  justify-content:center;
-  gap:24px;
-  margin-bottom:36px;
-}
-.social a{
-  width:46px;height:46px;
-  display:flex;align-items:center;justify-content:center;
-  border-radius:50%;
-  background:rgba(255,255,255,.05);
-  color:var(--gold);
-  transition:.25s;
-}
-.social a:hover{
-  background:var(--gold);
-  color:#000;
-  transform:translateY(-4px);
+/* Banner */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
 }
 
-/* RESPONSIVE GRID (IMPORTANT FIX) */
-.location-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:24px;
+.hero h1 {
+  letter-spacing: 3px;
 }
 
-/* LOCATION CARD */
-.loc-card{
-  background:#0f0f12;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.45);
-  transition:.3s;
-}
-.loc-card:hover{transform:translateY(-6px)}
-
-.loc-img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  filter:brightness(.6);
+.hero p {
+  color: var(--gold);
 }
 
-/* TITLE + GOLD UNDERLINE */
-.loc-title{
-  padding:16px;
-  text-align:center;
-  font-size:18px;
-  position:relative;
-}
-.loc-title::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:8px;
-  width:0;
-  height:2px;
-  background:var(--gold);
-  transform:translateX(-50%);
-  transition:.3s;
-}
-.loc-card:hover .loc-title::after{width:40%}
-
-.loc-title .ar{
-  display:block;
-  margin-top:6px;
-  font-family:"Cairo",sans-serif;
-  font-size:15px;
-  color:var(--gold-soft);
+/* Map */
+.map-section {
+  padding: 20px;
 }
 
-/* CALL */
-.call-btn{
-  display:block;
-  padding:12px;
-  text-align:center;
-  background:#000;
-  color:var(--gold);
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.call-btn:hover{
-  background:var(--gold);
-  color:#000;
+.map-section iframe {
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  border: none;
 }
 
-/* DUBAI HIGHLIGHT */
-.loc-card.dubai{
-  border:1px solid rgba(201,162,77,.35);
+/* Branches */
+.branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  padding: 40px 20px 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.branch {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .4s ease;
+}
+
+.branch:hover {
+  transform: translateY(-6px);
+}
+
+.branch img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.branch h3 {
+  padding: 14px;
+  text-align: center;
+}
+
+.branch h3 span {
+  display: block;
+  color: var(--gold);
+  font-size: 14px;
+}
+
+/* Call button */
+.call {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  background: black;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
 }
