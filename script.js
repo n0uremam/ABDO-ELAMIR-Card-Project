@@ -1,22 +1,36 @@
-const enBtn = document.getElementById("enBtn");
-const arBtn = document.getElementById("arBtn");
+/* ================= Language Toggle ================= */
+
+let currentLang = "en";
+
+const toggleBtn = document.getElementById("langToggle");
 const translatable = document.querySelectorAll("[data-en]");
 
-function setLang(lang) {
-  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+toggleBtn.addEventListener("click", () => {
+  currentLang = currentLang === "en" ? "ar" : "en";
+
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+
   translatable.forEach(el => {
-    el.textContent = el.dataset[lang];
+    el.textContent = el.dataset[currentLang];
   });
-  enBtn.classList.toggle("active", lang === "en");
-  arBtn.classList.toggle("active", lang === "ar");
-}
 
-enBtn.onclick = () => setLang("en");
-arBtn.onclick = () => setLang("ar");
-
-/* Open Google Maps on branch click */
-document.querySelectorAll(".branch").forEach(branch => {
-  branch.addEventListener("click", () => {
-    window.open(branch.dataset.map, "_blank");
-  });
+  toggleBtn.textContent = currentLang === "en" ? "AR" : "EN";
 });
+
+/* ================= Scroll Reveal (Apple-like) ================= */
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.25 }
+);
+
+reveals.forEach(el => observer.observe(el));
