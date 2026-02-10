@@ -1,36 +1,38 @@
-/* ================= Language Toggle ================= */
-
-let currentLang = "en";
-
+// Language toggle (smooth)
+let lang = "en";
 const toggleBtn = document.getElementById("langToggle");
-const translatable = document.querySelectorAll("[data-en]");
+const trans = document.querySelectorAll("[data-en]");
 
-toggleBtn.addEventListener("click", () => {
-  currentLang = currentLang === "en" ? "ar" : "en";
+function setLang(newLang){
+  lang = newLang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 
-  document.documentElement.lang = currentLang;
-  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
-
-  translatable.forEach(el => {
-    el.textContent = el.dataset[currentLang];
+  trans.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(6px)";
+    setTimeout(() => {
+      el.textContent = el.dataset[lang];
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+    }, 180);
   });
 
-  toggleBtn.textContent = currentLang === "en" ? "AR" : "EN";
+  toggleBtn.textContent = lang === "en" ? "AR" : "EN";
+}
+
+toggleBtn.addEventListener("click", () => {
+  setLang(lang === "en" ? "ar" : "en");
 });
 
-/* ================= Scroll Reveal (Apple-like) ================= */
+// Apple-level reveal
+const revealEls = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add("visible");
+    io.unobserve(e.target);
+  });
+}, { threshold: 0.2 });
 
-const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.25 }
-);
-
-reveals.forEach(el => observer.observe(el));
+revealEls.forEach(el => io.observe(el));
